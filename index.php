@@ -1,16 +1,16 @@
 <?php
 
-session_start() ;
-require_once "confg/db_connection.php" ;
+session_start();
+require_once "confg/db_connection.php";
 include "inc/header.php";
 include "inc/nav.php";
 include "helper/helper.php";
 
 
 
-$page = isset($_GET['page']) ? $_GET['page'] : 'register' ;
+$page = isset($_GET['page']) ? $_GET['page'] : 'register';
 
-switch ($page){
+switch ($page) {
     case "home":
         include "view/home.php";
         break;
@@ -44,7 +44,15 @@ switch ($page){
     case "control_add_blog":
         include "controller/control_add_blog.php";
         break;
+    case "control_delete_blog":
+        include "controller/control_delete_blog.php";
+        break;
+    case "single_blog":
+        include "view/single_blog.php";
+        break;
+    default:
+        include "view/maintenance.php";
+        break;
 }
 
 include "./inc/footer.php";
-

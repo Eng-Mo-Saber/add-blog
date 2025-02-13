@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
             $sql = "INSERT INTO `users` ( `name` , `email` ,`password`) values ('$name' , '$email' , '$password_hash')";
             mysqli_query($con, $sql);
-            $_SESSION['success']= "تم تسجيل البيانات بنجاح" ;
+            $_SESSION['success']= "(اذهب لتسجيل الدخول)تم تسجيل البيانات بنجاح" ;
             // $_SESSION['username']= $name ;
             header("location:./index.php?page=register");
             exit;
